@@ -64,14 +64,62 @@ public class MedicTerran extends Terran
         }
         
         //combate
+        //combate
+        int a = 1;
+        World myWorld = getWorld();
+        Mapa mapa = (Mapa)myWorld;
         if(isTouching(MedicZerg.class)&& Greenfoot.getRandomNumber(100)==3)
         {
+             
+             
+             EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
+             vidaMT.removervidaMT();
+             a = vidaMT.vidaMT;
             
+        }
+         if( a <= 0 )
+             {
+             getWorld().removeObjects(getWorld().getObjects(EnergiaMedicT.class));   
+             getWorld().removeObjects(getWorld().getObjects(MedicTerran.class));
+            EnergiaTerran energiaT = mapa.getEnergiaTerran(); 
+             energiaT.removenergiaT();
+            }
+        
+        
+        
+        
+        
+        
+        
+        
+           if(isTouching(GuerreroTerran.class) )
+
+        {
+            EnergiaGuerriT vidaGT = new EnergiaGuerriT();
+            EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
+            
+             vidaMT.curarMT();
+             vidaGT.ganarvidaGT();
+             
+             if( vidaMT.vidaMT <= 0 )
+             {
+             
+             getWorld().removeObjects(getWorld().getObjects(EnergiaMedicT.class));   
+             
              getWorld().removeObjects(getWorld().getObjects(MedicTerran.class));
            
-        }
-        }
-}
+             EnergiaTerran energiaT = mapa.getEnergiaTerran(); 
+             
+             energiaT.removenergiaT();
+            }
+            
+        
+    }
+        
+            
+        } 
+    }
+
 
 
     
