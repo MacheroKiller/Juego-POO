@@ -118,7 +118,9 @@ public class MedicTerran extends Terran
         EnergiaGuerriT vidaGT =  mapa.getEnergiaGuerriT();
         EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
         EnergiaConstrucT vidaCT = mapa.getEnergiaConstrucT();
+        BunkerTerran bunkerT = mapa.getBunkerTerran();
         //probabilidad de recibir daño de un enemigo
+       
         if( isTouching(MedicZerg.class) && Greenfoot.getRandomNumber(100)==3)
         {
              
@@ -139,7 +141,7 @@ public class MedicTerran extends Terran
              
         }
         //curar aliado
-           if( isTouching(GuerreroTerran.class )  && vidaMT.vidaMT > 20 && vidaGT.vidaGT < 100 )
+           if( isTouching(GuerreroTerran.class )  && vidaMT.vidaMT > 20 && vidaGT.vidaGT < 160 )
 
         {
            
@@ -156,6 +158,15 @@ public class MedicTerran extends Terran
              vidaCT.ganarvidaCT();
              
             }
+            
+            if( isTouching(BunkerMedicoT.class) && vidaMT.vidaMT < 120 && bunkerT.bunkerT > 0 ) {
+                
+                vidaMT.addvidaMT();
+                bunkerT.removerbunkerT();
+                
+            }
+            
+            
             //Determinar si la vida llega a 0
             if( vidaMT.vidaMT <= 0 )
              {
@@ -166,7 +177,7 @@ public class MedicTerran extends Terran
            
              EnergiaTerran energiaT = mapa.getEnergiaTerran(); 
              
-             energiaT.removenergiaT();
+             energiaT.removenergiaMT();
          
     }
 }     

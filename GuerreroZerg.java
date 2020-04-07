@@ -41,18 +41,7 @@ public class GuerreroZerg extends Zerg
              vidaGZ.removervidaGZ();
             
         }
-        //determinar si la vida llega a 0
-        if( vidaGZ.vidaGZ <= 0 )
-             {
-             
-             getWorld().removeObjects(getWorld().getObjects(EnergiaGuerriZ.class));   
-             
-             getWorld().removeObjects(getWorld().getObjects(GuerreroZerg.class));
-           
-             EnergiaZerg energiaZ = mapa.getEnergiaZerg(); 
-             
-             energiaZ.removenergiaZ();
-    }
+       
     //movimiento del personaje
        if(Greenfoot.isKeyDown("q")){
         if(Greenfoot.isKeyDown("d")){
@@ -165,5 +154,18 @@ public class GuerreroZerg extends Zerg
         {
             setLocation(getX(),getY()-1);
         }
+        
+         //determinar si la vida llega a 0
+        if( vidaGZ.vidaGZ <= 0 )
+             {
+             
+             getWorld().removeObjects(getWorld().getObjects(EnergiaGuerriZ.class));   
+             
+             getWorld().removeObjects(getWorld().getObjects(GuerreroZerg.class));
+           
+             EnergiaZerg energiaZ = mapa.getEnergiaZerg(); 
+             
+             energiaZ.removenergiaGZ();
+            }
     }    
 }

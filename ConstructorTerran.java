@@ -14,6 +14,18 @@ public class ConstructorTerran extends Terran
      */
     public void act() 
     {
+        //Gets
+        
+        World myWorld = getWorld();
+        Mapa mapa = (Mapa)myWorld;
+        EnergiaGuerriT vidaGT =  mapa.getEnergiaGuerriT();
+        EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
+        EnergiaConstrucT vidaCT = mapa.getEnergiaConstrucT();
+        GasTerran gasT = mapa.getGasTerran();
+        CristalTerran cristalT = mapa.getCristalTerran();
+        BunkerTerran bunkerT = mapa.getBunkerTerran();
+        MinaCristal minacristal = mapa.getMinaCristal();
+        
         //movimiento del personaje
         if(Greenfoot.isKeyDown("b")){
         if(Greenfoot.isKeyDown("right")){
@@ -74,28 +86,51 @@ public class ConstructorTerran extends Terran
             setLocation(getX(),getY()-1);
         }
         //encuentro con Bunker
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("right"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("right"))
         {
             setLocation(getX()-1,getY());
         }
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("left"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("left"))
         {
           setLocation(getX()+1,getY());
          }
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("up"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("up"))
         {
          setLocation(getX(),getY()+1);
         }
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("down"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("down"))
         {
             setLocation(getX(),getY()-1);
         }
+        
+        
+        if(isTouching(YacimientoDeGas.class) && gasT.gasT < 100)
+        {
+            
+            gasT.addGasT();
+            
+        }
+        
+        if(isTouching(MinaDeCristal.class) && cristalT.cristalT < 20) {
+            
+            cristalT.addCristalT();
+            minacristal.removecristal();
+            
+        }
+        
+        if(isTouching(DepositoT.class) && gasT.gasT > 4 && bunkerT.bunkerT() < 400){
+            
+           gasT.removeGaT();
+           bunkerT.addbunkerT();
+        }
+        
+        if(isTouching(DepositoT.class) && cristalT.cristalT() > 0 && bunkerT.bunkerT() < 400 ){
+            
+           cristalT.removeCristalT();
+           bunkerT.addbunkerT();
+        }
     //sistema de combate
-     World myWorld = getWorld();
-        Mapa mapa = (Mapa)myWorld;
-        EnergiaGuerriT vidaGT =  mapa.getEnergiaGuerriT();
-        EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
-        EnergiaConstrucT vidaCT = mapa.getEnergiaConstrucT();
+     
         
         //probabilidad de recivir daño de un enemigo
         if( isTouching(MedicZerg.class) && Greenfoot.getRandomNumber(100)==3)
@@ -127,7 +162,7 @@ public class ConstructorTerran extends Terran
            
              EnergiaTerran energiaT = mapa.getEnergiaTerran(); 
              
-             energiaT.removenergiaT();
+             energiaT.removenergiaCT();
          
     }
     }    

@@ -12,6 +12,7 @@ public class MedicZerg extends Zerg
         EnergiaMedicZ vidaMZ = mapa.getEnergiaMedicZ();
         EnergiaGuerriZ vidaGZ =  mapa.getEnergiaGuerriZ();
         EnergiaConstrucZ vidaCZ = mapa.getEnergiaConstrucZ();
+        BunkerZerg bunkerZ = mapa.getBunkerZerg();
         //probabilida de daño al enemigo
         if(isTouching(MedicTerran.class) && Greenfoot.getRandomNumber(100)==3)
         {
@@ -34,7 +35,7 @@ public class MedicZerg extends Zerg
             
         }
        //curar al aliado
-           if(isTouching(GuerreroZerg.class) && vidaMZ.vidaMZ > 20 && vidaGZ.vidaGZ < 100 )
+           if(isTouching(GuerreroZerg.class) && vidaMZ.vidaMZ > 20 && vidaGZ.vidaGZ < 160 )
 
         {
             
@@ -51,18 +52,7 @@ public class MedicZerg extends Zerg
              vidaCZ.ganarvidaCZ();
              
             }
-            //determinar si la vida llega a 0
-        if( vidaMZ.vidaMZ <= 0 )
-             {
-             
-             getWorld().removeObjects(getWorld().getObjects(EnergiaMedicZ.class));   
-             
-             getWorld().removeObjects(getWorld().getObjects(MedicZerg.class));
-           
-             EnergiaZerg energiaZ = mapa.getEnergiaZerg(); 
-             
-             energiaZ.removenergiaZ();
-    }
+    
         //movimiento del personaje
         if(Greenfoot.isKeyDown("r")){
         if(Greenfoot.isKeyDown("d")){
@@ -157,5 +147,27 @@ public class MedicZerg extends Zerg
         {
             setLocation(getX(),getY()-1);
         }
+        
+        if( isTouching(BunkerMedicoZ.class) && vidaMZ.vidaMZ < 120 && bunkerZ.bunkerZ > 0 ) {
+                
+                vidaMZ.addvidaMZ();
+                bunkerZ.removerbunkerZ();
+                
+          }
+        
+        
+        //determinar si la vida llega a 0
+        if( vidaMZ.vidaMZ <= 0 )
+             {
+             
+             getWorld().removeObjects(getWorld().getObjects(EnergiaMedicZ.class));   
+             
+             getWorld().removeObjects(getWorld().getObjects(MedicZerg.class));
+           
+             EnergiaZerg energiaZ = mapa.getEnergiaZerg(); 
+             
+             energiaZ.removenergiaMZ();
+            }
+        
     }    
 }

@@ -93,19 +93,19 @@ public class GuerreroTerran extends Terran
            setLocation(getX(),getY()-1);
         }
         //encuentro con Bunker
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("right"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("right"))
         {
             setLocation(getX()-1,getY());
         }
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("left"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("left"))
         {
           setLocation(getX()+1,getY());
          }
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("up"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("up"))
         {
          setLocation(getX(),getY()+1);
         }
-        if(isTouching(BunkerMedico.class)&& Greenfoot.isKeyDown("down"))
+        if(isTouching(BunkerMedicoT.class)&& Greenfoot.isKeyDown("down"))
         {
             setLocation(getX(),getY()-1);
         }
@@ -163,7 +163,7 @@ public class GuerreroTerran extends Terran
            
              EnergiaTerran energiaT = mapa.getEnergiaTerran(); 
              
-             energiaT.removenergiaT();
+             energiaT.removenergiaGT();
          
     }
     }
