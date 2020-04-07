@@ -1,35 +1,40 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class MedicZerg here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class MedicZerg extends Zerg
 {
-    /**
-     * Act - do whatever the MedicZerg wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public void act() 
     {
         //combate
-       
         World myWorld = getWorld();
         Mapa mapa = (Mapa)myWorld;
         EnergiaMedicZ vidaMZ = mapa.getEnergiaMedicZ();
         EnergiaGuerriZ vidaGZ =  mapa.getEnergiaGuerriZ();
         EnergiaConstrucZ vidaCZ = mapa.getEnergiaConstrucZ();
-        
+        //probabilida de daño al enemigo
         if(isTouching(MedicTerran.class) && Greenfoot.getRandomNumber(100)==3)
         {
              
              vidaMZ.removervidaMZ();
             
         }
-       
-           if(isTouching(GuerreroZerg.class) && vidaMZ.vidaMZ > 20 )
+        if(isTouching(ConstructorTerran.class) && (Greenfoot.getRandomNumber(100)==3||
+        Greenfoot.getRandomNumber(100)==2||Greenfoot.getRandomNumber(100)==1))
+        {
+             
+             vidaMZ.removervidaMZ();
+            
+        }
+        if(isTouching(GuerreroTerran.class) && (Greenfoot.getRandomNumber(100)==3||
+        Greenfoot.getRandomNumber(100)==2||Greenfoot.getRandomNumber(100)==1||Greenfoot.getRandomNumber(100)==4||Greenfoot.getRandomNumber(100)==5))
+        {
+             
+             vidaMZ.removervidaMZ();
+            
+        }
+       //curar al aliado
+           if(isTouching(GuerreroZerg.class) && vidaMZ.vidaMZ > 20 && vidaGZ.vidaGZ < 100 )
 
         {
             
@@ -38,7 +43,7 @@ public class MedicZerg extends Zerg
              
             }
             
-            if(isTouching(ConstructorZerg.class) && vidaMZ.vidaMZ > 20  )
+            if(isTouching(ConstructorZerg.class) && vidaMZ.vidaMZ > 20 && vidaCZ.vidaCZ < 100  )
 
         {
             
@@ -46,7 +51,7 @@ public class MedicZerg extends Zerg
              vidaCZ.ganarvidaCZ();
              
             }
-            
+            //determinar si la vida llega a 0
         if( vidaMZ.vidaMZ <= 0 )
              {
              
@@ -58,5 +63,99 @@ public class MedicZerg extends Zerg
              
              energiaZ.removenergiaZ();
     }
+        //movimiento del personaje
+        if(Greenfoot.isKeyDown("r")){
+        if(Greenfoot.isKeyDown("d")){
+        if(getX()<1000){
+            setLocation(getX()+1,getY());
+        }
+        }
+        if(Greenfoot.isKeyDown("a")){
+        if(getX()<1000){
+            setLocation(getX()-1,getY());
+        }
+        }
+        if(Greenfoot.isKeyDown("w")){
+        if(getY()<600){
+            setLocation(getX(),getY()-1);
+        }
+        }
+        if(Greenfoot.isKeyDown("s")){
+            if(getY()<600){
+        setLocation(getX(),getY()+1);}
+        }
+        }
+        else if(Greenfoot.isKeyDown("z")){
+        if(Greenfoot.isKeyDown("d")){
+        if(getX()<1000){
+            setLocation(getX()+1,getY());
+        }
+        }
+        if(Greenfoot.isKeyDown("a")){
+        if(getX()<1000){
+            setLocation(getX()-1,getY());
+        }
+        }
+        if(Greenfoot.isKeyDown("w")){
+        if(getY()<600){
+            setLocation(getX(),getY()-1);
+        }
+        }
+        if(Greenfoot.isKeyDown("s")){
+            if(getY()<600){
+        setLocation(getX(),getY()+1);}
+        }}
+        //encuentro con Arbol
+        if(isTouching(Arbol.class)&& Greenfoot.isKeyDown("d"))
+        {
+            setLocation(getX()-1,getY());
+        }
+        if(isTouching(Arbol.class)&& Greenfoot.isKeyDown("a"))
+        {
+          setLocation(getX()+1,getY());
+         }
+        if(isTouching(Arbol.class)&& Greenfoot.isKeyDown("w"))
+        {
+         setLocation(getX(),getY()+1);
+        }
+        if(isTouching(Arbol.class)&& Greenfoot.isKeyDown("s"))
+        {
+            setLocation(getX(),getY()-1);
+        }
+        
+        //encuentro con Mina De Cristal
+        if(isTouching(MinaDeCristal.class)&& Greenfoot.isKeyDown("d"))
+        {
+           setLocation(getX()-1,getY());
+        }
+        if(isTouching(MinaDeCristal.class)&& Greenfoot.isKeyDown("a"))
+        {
+            setLocation(getX()+1,getY());
+        }
+        if(isTouching(MinaDeCristal.class)&& Greenfoot.isKeyDown("w"))
+        {
+        setLocation(getX(),getY()+1);
+        }
+        if(isTouching(MinaDeCristal.class)&& Greenfoot.isKeyDown("s"))
+        {
+           setLocation(getX(),getY()-1);
+        }
+        //encuentro con YacimientoDeGas
+        if(isTouching(YacimientoDeGas.class)&& Greenfoot.isKeyDown("d"))
+        {
+            setLocation(getX()-1,getY());
+        }
+        if(isTouching(YacimientoDeGas.class)&& Greenfoot.isKeyDown("a"))
+        {
+          setLocation(getX()+1,getY());
+         }
+        if(isTouching(YacimientoDeGas.class)&& Greenfoot.isKeyDown("w"))
+        {
+         setLocation(getX(),getY()+1);
+        }
+        if(isTouching(YacimientoDeGas.class)&& Greenfoot.isKeyDown("s"))
+        {
+            setLocation(getX(),getY()-1);
+        }
     }    
 }
