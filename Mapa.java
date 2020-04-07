@@ -44,27 +44,85 @@
             ConstructorZerg consZ1 = new ConstructorZerg();
             GuerreroZerg guerrZ1 = new GuerreroZerg();
             
-            
-            
-            //Creacion Equipo Terran
-            addObject(medicT1, 100, 416);
-            addObject(consT1, 84, 292);
-            addObject(guerrT1, 212, 360);
+            //creacion De ARBOLES
+            Arbol ar1=new Arbol();
+            Arbol ar2=new Arbol();
+            Arbol ar3=new Arbol();
+            Arbol ar4=new Arbol();
+            Arbol ar5=new Arbol();
+            Arbol ar6=new Arbol();
+            Arbol ar7=new Arbol();
+            Arbol ar8=new Arbol();
+            Arbol ar9=new Arbol();
+            Arbol ar10=new Arbol();
+            Arbol ar11=new Arbol();
+            Arbol ar12=new Arbol();
+            Arbol ar13=new Arbol();
+            Arbol ar14=new Arbol();
+            Arbol ar15=new Arbol();
+            Arbol ar16=new Arbol();
+            //agregar arboles
+            addObject(ar1, 48, 245);
+            addObject(ar2, 105, 279);
+            addObject(ar3, 121, 145);
+            addObject(ar4, 146, 211);
+            addObject(ar5, 368, 476);
+            addObject(ar6, 244, 551);
+            addObject(ar7, 316, 546);
+            addObject(ar8, 405, 545);
+            addObject(ar9, 690, 462);
+            addObject(ar10, 770, 476);
+            addObject(ar11, 696, 546);
+            addObject(ar12, 778, 570);
+            addObject(ar13, 349, 79);
+            addObject(ar14, 633, 71);
+            addObject(ar15, 721, 92);
+            addObject(ar16, 841, 53);
+            //yacimiento de gas
+            YacimientoDeGas y1=new YacimientoDeGas();
+            YacimientoDeGas y2=new YacimientoDeGas();
+            YacimientoDeGas y3=new YacimientoDeGas();
+            YacimientoDeGas y4=new YacimientoDeGas();
+            YacimientoDeGas y5=new YacimientoDeGas();
+            YacimientoDeGas y6=new YacimientoDeGas();
+            //agregacion 
+            addObject(y1, 208, 163);
+            addObject(y2, 261, 175);
+            addObject(y3, 226, 214);
+            addObject(y4, 931, 539);
+            addObject(y5, 973, 571);
+            addObject(y6, 905, 588);
+            //creacion bunker medicos
+            BunkerMedicoT b1=new BunkerMedicoT();
+            BunkerMedicoZ b2=new BunkerMedicoZ();
+            //agregacion
+            addObject(b2, 945, 294);
+            addObject(b1, 100, 529);
+            //depositos creacion
+            DepositoT d1= new DepositoT();
+            DepositoZ d2= new DepositoZ();
+            //agregacion
+            addObject(d2, 914, 189);
+            addObject(d1, 81, 402);
             
             //Creacion Energia/Gas/Cristales Terran
             addObject(energiaT, 73, 28);
             addObject(gasT, 36, 50); 
-            addObject(cristalT, 45, 69);
+            addObject(cristalT, 90, 69);
             addObject(bunkerT, 50, 200);
             addObject(vidaMT, 45, 90);
             addObject(vidaCT, 45, 110);
             addObject(vidaGT, 45, 130);
             
+            //Creacion Equipo Terran
+            addObject(medicT1, 209, 330);
+            addObject(consT1, 245, 410);
+            addObject(guerrT1, 311, 326);
             
             //Creacion Equipo Zerg
-            addObject(medicZ1, 910, 278);
-            addObject(consZ1, 903, 158);
-            addObject(guerrZ1, 820, 220);
+            addObject(guerrZ1, 762, 322);
+            addObject(consZ1, 801, 256);
+            addObject(medicZ1, 853, 331);
             
             //Creacion Energia Zerg
             addObject(energiaZ, 929, 18);
