@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class EnergiaMedicT extends Contador
 {
     int vidaMT = 120;
-    int daño = 30;
+    
     /**
      * Act - do whatever the EnergiaMedicTerran wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,7 +28,7 @@ public class EnergiaMedicT extends Contador
     
     public void removervidaMT(){
      
-        vidaMT = vidaMT - 30;
+        vidaMT = vidaMT - 20;
         
     }
     public void curarMT(){

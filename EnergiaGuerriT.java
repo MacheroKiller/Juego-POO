@@ -29,7 +29,7 @@ public class EnergiaGuerriT extends Contador
     
     public void removervidaGT(){
      
-        vidaGT = vidaGT - 30;
+        vidaGT = vidaGT - 20;
         
     }
     

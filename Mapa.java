@@ -11,8 +11,12 @@
     EnergiaTerran energiaT = new EnergiaTerran();
     EnergiaMedicT vidaMT = new EnergiaMedicT();
     EnergiaGuerriT vidaGT = new EnergiaGuerriT();
+    EnergiaConstrucT vidaCT = new EnergiaConstrucT();
     
     EnergiaZerg energiaZ = new EnergiaZerg();
+    EnergiaMedicZ vidaMZ = new EnergiaMedicZ();
+    EnergiaGuerriZ vidaGZ = new EnergiaGuerriZ();
+    EnergiaConstrucZ vidaCZ = new EnergiaConstrucZ();
     
     /**
          * Constructor for objects of class MyWorld.
@@ -26,18 +30,34 @@
             MedicTerran medicT1= new MedicTerran();
             ConstructorTerran consT1=new ConstructorTerran();
             GuerreroTerran guerrT1 = new GuerreroTerran();
-            //agragar objeto
-            addObject(medicT1, 170, 500);
-            //addObject(consT1, 254,538);
-            addObject( guerrT1, 254, 538);
             
-            //Creacion Energia Terra
+            MedicZerg medicZ1 = new MedicZerg();
+            ConstructorZerg consZ1 = new ConstructorZerg();
+            GuerreroZerg guerrZ1 = new GuerreroZerg();
+            
+            
+            
+            //Creacion Equipo Terran
+            addObject(medicT1, 170, 500);
+            addObject(consT1, 350, 538);
+            addObject(guerrT1, 254, 538);
+            
+            //Creacion Energia Terran
             addObject(energiaT, 100, 40);
             addObject(vidaMT, 170, 500);
             addObject(vidaGT, 254, 538);
+            addObject(vidaCT, 350, 538);
+            
+            //Creacion Equipo Zerg
+            addObject(medicZ1, 900, 60);
+            addObject(consZ1, 800, 70);
+            addObject(guerrZ1, 850, 80);
             
             //Creacion Energia Zerg
             addObject(energiaZ, 600, 40);
+            addObject(vidaMZ, 900, 60);
+            addObject(vidaCZ, 800, 70);
+            addObject(vidaGZ, 850, 80);
         
     }
     
@@ -59,12 +79,37 @@
         
     }
     
+    public EnergiaConstrucT getEnergiaConstrucT(){
+     
+        return vidaCT;
+        
+    }
+    
     
     public EnergiaZerg getEnergiaZerg(){
     
         return energiaZ;
         
     }
+    
+    public EnergiaMedicZ getEnergiaMedicZ(){
+     
+        return vidaMZ;
+        
+    }
+    
+    public EnergiaConstrucZ getEnergiaConstrucZ(){
+     
+        return vidaCZ;
+        
+    }
+    
+    public EnergiaGuerriZ getEnergiaGuerriZ(){
+     
+        return vidaGZ;
+        
+    }
+   
     
     public void act(){
             

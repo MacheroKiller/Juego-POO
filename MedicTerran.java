@@ -63,45 +63,41 @@ public class MedicTerran extends Terran
         }
         }
         
+        
         //combate
-        //combate
-        int a = 1;
+       
         World myWorld = getWorld();
         Mapa mapa = (Mapa)myWorld;
-        if(isTouching(MedicZerg.class)&& Greenfoot.getRandomNumber(100)==3)
+        EnergiaGuerriT vidaGT =  mapa.getEnergiaGuerriT();
+        EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
+        EnergiaConstrucT vidaCT = mapa.getEnergiaConstrucT();
+        
+        if( isTouching(MedicZerg.class) && Greenfoot.getRandomNumber(100)==3)
         {
              
-             
-             EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
              vidaMT.removervidaMT();
-             a = vidaMT.vidaMT;
-            
+             
         }
-         if( a <= 0 )
-             {
-             getWorld().removeObjects(getWorld().getObjects(EnergiaMedicT.class));   
-             getWorld().removeObjects(getWorld().getObjects(MedicTerran.class));
-            EnergiaTerran energiaT = mapa.getEnergiaTerran(); 
-             energiaT.removenergiaT();
-            }
         
-        
-        
-        
-        
-        
-        
-        
-           if(isTouching(GuerreroTerran.class) )
+           if( isTouching(GuerreroTerran.class )  && vidaMT.vidaMT > 20 )
 
         {
-            EnergiaGuerriT vidaGT = new EnergiaGuerriT();
-            EnergiaMedicT vidaMT = mapa.getEnergiaMedicT();
-            
+           
              vidaMT.curarMT();
              vidaGT.ganarvidaGT();
              
-             if( vidaMT.vidaMT <= 0 )
+            }
+            
+              if( isTouching(ConstructorTerran.class) && vidaMT.vidaMT > 20)
+
+        {
+           
+             vidaMT.curarMT();
+             vidaCT.ganarvidaCT();
+             
+            }
+            
+            if( vidaMT.vidaMT <= 0 )
              {
              
              getWorld().removeObjects(getWorld().getObjects(EnergiaMedicT.class));   
@@ -111,14 +107,12 @@ public class MedicTerran extends Terran
              EnergiaTerran energiaT = mapa.getEnergiaTerran(); 
              
              energiaT.removenergiaT();
-            }
-            
-        
+         
     }
+}     
+}
         
-            
-        } 
-    }
+    
 
 
 
