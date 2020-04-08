@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnergiaConstrucZ extends Contador
 {
-   int vidaCZ = 60;
+   int vidaCZ = 100;
     
     
     public void act() 

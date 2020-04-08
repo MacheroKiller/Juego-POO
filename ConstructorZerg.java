@@ -27,10 +27,12 @@ public class ConstructorZerg extends Zerg
         GasZerg gasZ = mapa.getGasZerg();
        
         CristalZerg cristalZ = mapa.getCristalZerg();
-        
-        MinaCristal minacristal = mapa.getMinaCristal();
-        
+      
         BunkerZerg bunkerZ = mapa.getBunkerZerg();
+        
+        Mina1 mina1 = mapa.getMina1();
+        Mina2 mina2 = mapa.getMina2();
+        Mina3 mina3 = mapa.getMina3();
         
         
         //movimiento del personaje
@@ -154,12 +156,28 @@ public class ConstructorZerg extends Zerg
             
         }
         
-        if( isTouching(MinaDeCristal.class) && cristalZ.cristalZ < 20){
+       
+            if(isTouching(Mina1.class) && cristalZ.cristalZ < 20) {
             
             cristalZ.addCristalZ();
-            minacristal.removecristal();
+            mina1.removemina1();
             
         }
+        
+        if(isTouching(Mina2.class) && cristalZ.cristalZ < 20) {
+            
+            cristalZ.addCristalZ();
+            mina2.removemina2();
+            
+        }
+        
+        if(isTouching(Mina3.class) && cristalZ.cristalZ < 20) {
+            
+            cristalZ.addCristalZ();
+            mina3.removemina3();
+            
+        }
+        
         
          if(isTouching(DepositoZ.class) && gasZ.gasZ > 4 && bunkerZ.bunkerZ() < 400){
             
@@ -186,6 +204,31 @@ public class ConstructorZerg extends Zerg
              
              energiaZ.removenergiaCZ();
             }
+        
+                if( mina1.mina1() == 0 ){
+            
+            getWorld().removeObjects(getWorld().getObjects(Mina1.class));   
+             
+            getWorld().removeObjects(getWorld().getObjects(Cristal1.class));
+            
+        }
+        
+        if( mina2.mina2() == 0 ){
+            
+            getWorld().removeObjects(getWorld().getObjects(Mina2.class));   
+             
+            getWorld().removeObjects(getWorld().getObjects(Cristal2.class));
+            
+        }
+        
+        if( mina3.mina3() == 0 ){
+            
+            getWorld().removeObjects(getWorld().getObjects(Mina3.class));   
+             
+            getWorld().removeObjects(getWorld().getObjects(Cristal3.class));
+            
+        }
+            
         
 }    
 }

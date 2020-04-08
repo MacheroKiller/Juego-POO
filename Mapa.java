@@ -25,7 +25,12 @@
     BunkerZerg bunkerZ = new BunkerZerg();
     
     
-    MinaCristal minacristal = new MinaCristal();
+    Cristal1 cristal1 = new Cristal1();
+    Cristal2 cristal2 = new Cristal2();
+    Cristal3 cristal3 = new Cristal3();
+    Mina1 mina1 = new Mina1();
+    Mina2 mina2 = new Mina2();
+    Mina3 mina3 = new Mina3();
     
     /**
          * Constructor for objects of class MyWorld.
@@ -108,7 +113,7 @@
             //Creacion Energia/Gas/Cristales Terran
             addObject(energiaT, 73, 28);
             addObject(gasT, 36, 50); 
-            addObject(cristalT, 90, 69);
+            addObject(cristalT, 41, 70);
             addObject(bunkerT, 50, 200);
             addObject(vidaMT, 45, 90);
             addObject(vidaCT, 45, 110);
@@ -134,9 +139,15 @@
             addObject(bunkerZ, 777, 52);
         
            //MinaCristal + Gas
-           addObject(minacristal, 500, 500);
+           addObject(cristal1, 534, 542);
+           addObject(mina1, 534, 542);
            
-            
+           addObject(cristal2, 485, 40);
+           addObject(mina2, 485, 40);
+           
+           addObject(cristal3, 555, 297);
+           addObject(mina3, 555, 297);
+          
     }
     
     public EnergiaTerran getEnergiaTerran(){
@@ -222,9 +233,21 @@
    
     
     
-    public MinaCristal getMinaCristal(){
+    public Mina1 getMina1(){
+     
+        return mina1;
         
-     return minacristal;
+    }
+    
+    public Mina2 getMina2(){
+     
+        return mina2;
+        
+    }
+    
+    public Mina3 getMina3(){
+     
+        return mina3;
         
     }
     
@@ -234,12 +257,30 @@
         
     }
     
+    
+    
+    
     public void act(){
+        if ( energiaZ.energiaZ() == 0 ){
             
             
+        Greenfoot.setWorld( new TerranWins() );
+            
+        
+        
         }
+        
+        if ( energiaT.energiaT() == 0 ){
             
-           
+            
+        Greenfoot.setWorld( new ZergWins() );
+            
+        
+        
+        }
+        
+            
+    }  
                 
            
             

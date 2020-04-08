@@ -40,4 +40,13 @@ public class EnergiaZerg extends Contador
         energiaZ++;
         
     }
+    
+    public int energiaZ(){
+        
+        energiaZ = energiaZ;
+        return energiaZ;
+        
+    }
+    
+    
 }

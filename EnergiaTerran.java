@@ -28,6 +28,7 @@ public class EnergiaTerran extends Contador
     public void removenergiaGT(){
         
         energiaT = energiaT + mGT;
+    
     }
     
     public void removenergiaCT(){
@@ -39,4 +40,12 @@ public class EnergiaTerran extends Contador
         energiaT++;
         
     }
+    
+     public int energiaT(){
+        
+        energiaT = energiaT;
+        return energiaT;
+        
+    }
+    
 }
