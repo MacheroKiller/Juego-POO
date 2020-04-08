@@ -43,7 +43,7 @@ public class GuerreroZerg extends Zerg
         }
        
     //movimiento del personaje
-       if(Greenfoot.isKeyDown("q")){
+       if(Greenfoot.isKeyDown("v")){
         if(Greenfoot.isKeyDown("d")){
         if(getX()<1000){
             setLocation(getX()+1,getY());

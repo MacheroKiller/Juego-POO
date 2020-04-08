@@ -29,7 +29,7 @@ public class ConstructorTerran extends Terran
         Mina3 mina3 = mapa.getMina3();
         
         //movimiento del personaje
-        if(Greenfoot.isKeyDown("b")){
+        if(Greenfoot.isKeyDown("p")){
         if(Greenfoot.isKeyDown("right")){
         if(getX()<1000){
             setLocation(getX()+1,getY());

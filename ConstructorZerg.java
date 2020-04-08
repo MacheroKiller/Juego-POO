@@ -36,7 +36,7 @@ public class ConstructorZerg extends Zerg
         
         
         //movimiento del personaje
-        if(Greenfoot.isKeyDown("e")){
+        if(Greenfoot.isKeyDown("b")){
         if(Greenfoot.isKeyDown("d")){
         if(getX()<1000){
             setLocation(getX()+1,getY());

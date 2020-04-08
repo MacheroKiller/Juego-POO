@@ -54,7 +54,7 @@ public class MedicZerg extends Zerg
             }
     
         //movimiento del personaje
-        if(Greenfoot.isKeyDown("r")){
+        if(Greenfoot.isKeyDown("c")){
         if(Greenfoot.isKeyDown("d")){
         if(getX()<1000){
             setLocation(getX()+1,getY());

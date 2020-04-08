@@ -18,7 +18,7 @@ public class MedicTerran extends Terran
     public void act() 
     {
         //movimiento del personaje
-        if(Greenfoot.isKeyDown("h")){
+        if(Greenfoot.isKeyDown("i")){
         if(Greenfoot.isKeyDown("right")){
         if(getX()<1000){
             setLocation(getX()+1,getY());

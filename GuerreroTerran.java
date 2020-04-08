@@ -15,7 +15,7 @@ public class GuerreroTerran extends Terran
     public void act() 
     {
        //movimiento del personaje
-       if(Greenfoot.isKeyDown("g")){
+       if(Greenfoot.isKeyDown("o")){
         if(Greenfoot.isKeyDown("right")){
         if(getX()<1000){
             setLocation(getX()+1,getY());

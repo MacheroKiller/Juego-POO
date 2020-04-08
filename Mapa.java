@@ -68,16 +68,16 @@
             Arbol ar16=new Arbol();
             //agregar arboles
             addObject(ar1, 48, 245);
-            addObject(ar2, 105, 279);
+            addObject(ar2, 105, 250);
             addObject(ar3, 121, 145);
             addObject(ar4, 146, 211);
-            addObject(ar5, 368, 476);
+            addObject(ar5, 368, 510);
             addObject(ar6, 244, 551);
             addObject(ar7, 316, 546);
             addObject(ar8, 405, 545);
-            addObject(ar9, 690, 462);
-            addObject(ar10, 770, 476);
-            addObject(ar11, 696, 546);
+            addObject(ar9, 690, 520);
+            addObject(ar10, 762, 512);
+            addObject(ar11, 696, 576);
             addObject(ar12, 778, 570);
             addObject(ar13, 349, 79);
             addObject(ar14, 633, 71);
